@@ -7,7 +7,6 @@ export function parallax(target){
     gsap.utils.toArray(target.value).forEach((section) => {
       const altura = section.offsetHeight - section.parentElement.offsetHeight;
 
-
       gsap.fromTo(section,{ 
         y: -altura
       }, {
@@ -21,6 +20,16 @@ export function parallax(target){
     });
   }
 
+export function splitAnimation(text){
+  gsap.to(text.chars, {
+    scrollTrigger: {
+      trigger: `.${text.elements[0].className}`,
+      start: 'top 80%',
+    },
+    y:0,
+    stagger: 0.03,
+  });
+}
 
 const getApi = axios.create({
   baseURL: 'https://zelda.fanapis.com/api'

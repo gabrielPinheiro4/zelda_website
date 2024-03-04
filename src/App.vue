@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid d-flex justify-content-between">
 
       <router-link class="navbar-brand" to="/">Zelda Insider</router-link>
 

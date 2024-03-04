@@ -23,6 +23,11 @@ const routes = [
     path: '/jogos_link/:titulo/:desc/:ano/:dev/:pub',
     name: 'jogos_link',
     component: () => import('../views/JogosLinkView.vue')
+  },
+  {
+    path: '/personagens',
+    name: 'personagens',
+    component: () => import('../views/CharactersView.vue')
   }
 ]
 

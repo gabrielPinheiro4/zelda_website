@@ -19,12 +19,16 @@
         This website is made for student purposes only, enjoy
       </p>
 
-        <h1>The most complete website about The Legend of Zelda</h1>
+        <h1 class="home_title"
+        ref="titleRef"
+        >
+        The most complete website about The Legend of Zelda
+      </h1>
       </div>
     </section>
 
     <section class="container about">
-      <h2>What is The Legend of Zelda ?</h2>
+      <h2 class="h2Ref" ref="h2Ref">What is The Legend of Zelda ?</h2>
 
       <div :style="imgWrapperCssSetup" class="about_img_wrapper">
         <img 
@@ -62,7 +66,8 @@
 
 <script>
 import { ref, onMounted, } from 'vue';
-import { parallax } from '../funcoes.js'
+import SplitType from 'split-type'
+import { parallax, splitAnimation } from '../funcoes.js'
 import TheLinks from '@/components/TheLinks.vue';
 
 
@@ -73,41 +78,59 @@ export default {
   },
 
   setup(){
+    const titleRef = ref(null)
+    const h2Ref = ref(null)
+    const parallaxHomeImg = ref(null);
+    const parallaxAboutImg = ref(null);
+    
     const imgWrapperCssSetup = {
       width: 100 + '%',
-      height: 450 + 'px',
+      height: 500 + 'px',
       position: 'relative',
       overflow: 'hidden',
-    }
+    };
 
     const imgContentCssSetup = {
         width: 100 + '%',
-        height: 600 + 'px',
+        height: 800 + 'px',
         position: 'absolute'
-    }
+    };
+    
+    onMounted(() => {
+      const homeTitulo = new SplitType(
+        `.${titleRef.value.className}`, {types: 'char, words'}
+      );
+      const h2Home = new SplitType(
+        `.${h2Ref.value.className}`, {types: 'char, words'}
+      );
 
-    const parallaxHomeImg = ref(null)
-    const parallaxAboutImg = ref(null)
-
-
-    onMounted(() => parallax(parallaxHomeImg))
-    onMounted(() => parallax(parallaxAboutImg))
+      parallax(parallaxAboutImg)
+      parallax(parallaxHomeImg)
+      splitAnimation(homeTitulo)
+      splitAnimation(h2Home)
+    })
 
     return {
       imgWrapperCssSetup,
       imgContentCssSetup,
       parallaxHomeImg,
       parallaxAboutImg,
-    }
+      titleRef,
+      h2Ref
+    };
     
   },
-
-
 }
 </script>
 
 <style lang="scss">
   .home{
+    h1, h2{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      .char{
+        transform: translateY(115px);
+      }
+    }
     h1{
       max-width: 800px;
       font-size: 4em;
@@ -123,6 +146,10 @@ export default {
 
     .about{
       margin-top: 300px;
+
+      h2{
+        font-size: 3em;
+      }
     }
   }
 
