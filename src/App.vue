@@ -1,8 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+      <router-link class="navbar-brand" to="/">Zelda Insider</router-link>
+
+      <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNavAltMarkup" 
+      aria-controls="navbarNavAltMarkup" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <router-link class="nav-link" to="/jogos">Games</router-link>
+          <router-link 
+          class="nav-link" 
+          to="/personagens">
+          Characters
+        </router-link>
+        </div>
+      </div>
+      
+    </div>
+</nav>
   <router-view/>
 </template>
 
@@ -11,8 +36,10 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+}
+
+:root { 
+  scroll-behavior: auto !important; 
 }
 
 nav {
@@ -20,11 +47,7 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    color: #000;
   }
 }
 </style>
