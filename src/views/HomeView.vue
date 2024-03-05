@@ -58,6 +58,49 @@
       </div>
     </section>
 
+    <section class="second_section mt-5">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="ocarina">
+            <div class="second_section_image1">
+              <img ref="ocarina" src="../assets/ocarina.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="ocarina2 d-flex flex-column justify-content-between">
+            <div class="second_section_image2 align-self-end">
+              <img ref="ocarina2" src="../assets/ocarina2.jpg" alt="">
+            </div>
+
+            <p class="text-white justify-self-end">Each installment in the 
+              franchise introduces players to a new iteration of Hyrule, 
+              featuring dungeons, puzzles, and memorable characters. A hallmark 
+              of The Legend of Zelda is the exploration of vast, interconnected 
+              worlds, often facilitated by Link's signature item, the Master 
+              Sword. Time travel, parallel dimensions, and the cyclical nature 
+              of the hero's journey are recurring motifs, adding depth to the 
+              series' lore.
+            </p>
+          </div>
+        </div>
+
+        <div class="breath_container d-flex justify-content-between flex-wrap">
+          <p class="text-white">
+            The gameplay is a blend of action, exploration, and puzzle-solving, 
+            with a distinctive emphasis on acquiring tools and items to progress
+             through the narrative. The musical score, composed by Koji Kondo, 
+             is legendary and includes iconic tunes like the "Overworld Theme" 
+             and "Zelda's Lullaby."
+          </p>
+
+          <div class="breath_img">
+            <img ref="botw" src="../assets//botw.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <div class="container">
       <TheLinks/>
     </div>
@@ -82,6 +125,9 @@ export default {
     const h2Ref = ref(null)
     const parallaxHomeImg = ref(null);
     const parallaxAboutImg = ref(null);
+    const ocarina = ref(null);
+    const ocarina2 = ref(null);
+    const botw = ref(null)
     
     const imgWrapperCssSetup = {
       width: 100 + '%',
@@ -92,7 +138,7 @@ export default {
 
     const imgContentCssSetup = {
         width: 100 + '%',
-        height: 800 + 'px',
+        height: 600 + 'px',
         position: 'absolute'
     };
     
@@ -106,6 +152,9 @@ export default {
 
       parallax(parallaxAboutImg)
       parallax(parallaxHomeImg)
+      parallax(ocarina)
+      parallax(ocarina2)
+      parallax(botw)
       splitAnimation(homeTitulo)
       splitAnimation(h2Home)
     })
@@ -116,7 +165,10 @@ export default {
       parallaxHomeImg,
       parallaxAboutImg,
       titleRef,
-      h2Ref
+      h2Ref,
+      ocarina,
+      ocarina2,
+      botw
     };
     
   },
@@ -150,6 +202,65 @@ export default {
       h2{
         font-size: 3em;
       }
+    }
+
+    .second_section{
+      background: #121212;
+      padding: 300px 0;
+
+      .second_section_image1{
+        width: 650px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+
+        img{
+          max-width: 900px;
+          right: -150px;
+          height: 800px;
+          position: absolute;
+        }
+      }
+
+      .ocarina2{
+        p{
+          max-width: 500px;
+          font-size: 1.3em;
+        }
+        .second_section_image2{
+          width: 300px;
+          height: 180px;
+          position: relative;
+          overflow: hidden;
+        img{
+          width: 100%;
+          height: 250px;
+          position: absolute;
+        }
+      }
+      }
+
+      .breath_container{
+        margin-top: 200px;
+
+        p{
+          max-width: 500px;
+        }
+        .breath_img{
+          width: 700px;
+          height: 643px;
+          position: relative;
+          overflow: hidden;
+
+          img{
+            width: 900px;
+            height: 843px;
+            right: -100px;
+            position: absolute;
+          }
+        }
+      }
+      
     }
   }
 
