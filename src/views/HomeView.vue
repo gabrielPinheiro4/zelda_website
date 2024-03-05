@@ -110,7 +110,7 @@
 <script>
 import { ref, onMounted, } from 'vue';
 import SplitType from 'split-type'
-import { parallax, splitAnimation } from '../funcoes.js'
+import { parallax, splitAnimation } from '@/funcoes.js'
 import TheLinks from '@/components/TheLinks.vue';
 
 

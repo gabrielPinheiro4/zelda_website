@@ -1,14 +1,14 @@
 <template>
 
 <div class="card_personagem rounded-4 p-5">
-    <h3>{{nome}}</h3>
+    <h3>{{name}}</h3>
 
     <div class="personagem_text pt-5">
-        <p>{{descricao}}</p>
+        <p>{{description}}</p>
 
         <div class="genero_raca">
-            <p v-if="genero != null">Gender: {{genero}}</p>
-            <p v-if="raca != null">Race: {{raca}}</p>
+            <p v-if="gender != null">Gender: {{gender}}</p>
+            <p v-if="race != null">Race: {{race}}</p>
         </div>
         
     </div>
@@ -20,10 +20,22 @@
 export default{
     name: 'CharacterCard',
     props: {
-        nome: String,
-        descricao: String,
-        genero: String,
-        raca: String
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        gender: {
+            type: String,
+            required: true
+        },
+        race: {
+            type: String,
+            required: true
+        }
     }
 }
 </script>

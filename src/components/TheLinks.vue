@@ -1,6 +1,6 @@
 <template>
     <div class="links d-flex justify-content-between">
-        <router-link to="/personagens">Expore characters</router-link>
+        <router-link to="/personagens">Explore characters</router-link>
         <router-link to="/jogos">Explore games</router-link>
     </div>
 </template>

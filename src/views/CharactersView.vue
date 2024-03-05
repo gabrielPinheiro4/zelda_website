@@ -6,12 +6,7 @@
     <div class="personagnes_cards row d-flex flex-wrap">
         <div class="col-xl-4 mt-4"
         v-for="personagem in personagensList" :key="personagem">
-            <CharacterCard
-            :nome="personagem.name"
-            :descricao="personagem.description"
-            :genero="personagem.gender"
-            :raca="personagem.race"
-            />
+            <CharacterCard v-bind="personagem"/>
         </div>
     </div>
 </div>
@@ -19,7 +14,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import CharacterCard from '@/components/CharacterCard.vue';
 import getApi from '@/funcoes';
 
@@ -39,7 +34,7 @@ export default{
             console.log(error);
         })
 
-        onMounted(() => personagens)
+        onBeforeMount(() => personagens)
 
         return {
             personagensList,

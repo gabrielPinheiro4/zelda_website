@@ -14,11 +14,6 @@
 <script>
 export default{
     name: 'JogosLinkView',
-    
-
-    setup(){
-        
-    }
 }
 </script>
 

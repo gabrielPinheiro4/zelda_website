@@ -18,6 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/jogos">Games</router-link>
+          
           <router-link 
           class="nav-link" 
           to="/personagens">
@@ -44,10 +45,11 @@
 
 nav {
   padding: 30px;
+  
 
   a {
     font-weight: bold;
-    color: #000;
+    mix-blend-mode: difference;
   }
 }
 </style>

@@ -35,7 +35,7 @@
 
 <script>
 import getApi from '@/funcoes'
-import { ref, onMounted } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 import TheLinks from '@/components/TheLinks.vue'
 
     export default{
@@ -57,7 +57,7 @@ import TheLinks from '@/components/TheLinks.vue'
                 })
             }
 
-            onMounted(apiJogos)
+            onBeforeMount(apiJogos)
             
             return {
                 listJogos,
